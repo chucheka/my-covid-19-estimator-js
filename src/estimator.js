@@ -13,7 +13,7 @@ const data = {
 };
 
 const covid19ImpactEstimator = (data) => {
-	const { region, periodType, reportedCases, population, totalHospitalBeds } = data;
+	const { region, periodType, reportedCases, totalHospitalBeds } = data;
 
 	let { timeToElapse } = data;
 
@@ -25,18 +25,15 @@ const covid19ImpactEstimator = (data) => {
 			case 'days':
 				normalizedTimeToElaspe = timeToElapse;
 				return normalizedTimeToElaspe;
-				break;
 			case 'weeks':
 				normalizedTimeToElaspe = timeToElapse * 7;
 				return normalizedTimeToElaspe;
-				break;
 			case 'months':
 				normalizedTimeToElaspe = timeToElapse * 30;
 				return normalizedTimeToElaspe;
-				break;
+
 			default:
 				return normalizedTimeToElaspe;
-				break;
 		}
 	}
 
